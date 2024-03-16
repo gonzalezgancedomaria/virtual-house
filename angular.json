@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "tfm": {
+    "pannellum": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/tfm",
+            "outputPath": "dist/pannellum",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -30,9 +30,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/pannellum/build/pannellum.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "./node_modules/pannellum/build/pannellum.js"
+            ],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
@@ -67,10 +70,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "tfm:build:production"
+              "buildTarget": "pannellum:build:production"
             },
             "development": {
-              "buildTarget": "tfm:build:development"
+              "buildTarget": "pannellum:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -78,7 +81,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "tfm:build"
+            "buildTarget": "pannellum:build"
           }
         },
         "test": {
@@ -104,6 +107,6 @@
     }
   },
   "cli": {
-    "analytics": "62a9139f-a237-437a-b594-5bee3fa03e94"
+    "analytics": "de975677-cac6-4073-8dc1-074305ad2f10"
   }
 }

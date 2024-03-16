@@ -4,6 +4,7 @@ import { EntityState, EntityAdapter, createEntityAdapter } from "@ngrx/entity";
 import * as signupActions from '../actions/signup.actions';
 
 export interface SignupState extends EntityState<User> {
+    user: User;
     error: string;
 }
 
@@ -14,7 +15,8 @@ export const adapter: EntityAdapter<User> = createEntityAdapter<User>({
 export const defaultState: SignupState = {
     ids: [],
     entities: {},
-    error: ''
+    user: null,
+    error: null
 }
 
 export const initialState: SignupState = adapter.getInitialState(defaultState);
@@ -22,11 +24,8 @@ export const initialState: SignupState = adapter.getInitialState(defaultState);
 export const signupReducer: ActionReducer<SignupState> = createReducer(
     initialState,
     on(signupActions.SignupActionSuccess, (state, { user }): SignupState => ({
-        ...state,
-        entities: {
-            ...state.entities,
-            user
-        }
+        ...adapter.addOne(user, state),
+        user,
     })),
     on(signupActions.SignupActionFailure, (state, { error }): SignupState => ({
         ...state,

@@ -8,4 +8,4 @@ export interface User {
     password: string;
 }
 
-export type Role = 'admin' | 'role';
+export type Role = 'admin' | 'user';

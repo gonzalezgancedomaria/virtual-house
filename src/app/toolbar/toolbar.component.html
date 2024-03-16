@@ -5,13 +5,21 @@
 
     <button mat-button color="primary" routerLink="/home">Inicio</button>
     <button mat-button color="primary" routerLink="/virtual-house">Casa virtual</button>
-    <button mat-button color="primary" routerLink="/houses">Gestionar casas</button>
-    <button mat-button color="primary" routerLink="/contact">Contacto</button>
-    <button mat-button color="primary" routerLink="/help">Ayuda</button>
-
+    @if(!!(userRole$ | async)){ 
+         <!-- && (userRole$ | async) === 'admin'){ -->
+        <button mat-button color="primary" routerLink="/houses">Gestionar casas</button>
+    }
+    @if(!!(userRole$ | async)){
+        <button mat-button color="primary" routerLink="/contact">Contacto</button>
+        <button mat-button color="primary" routerLink="/help">Ayuda</button>
+    }
     <span class="spacer"></span>
     
-    <button mat-button color="primary" routerLink="/sign-up">Registrarse</button>
-    <button mat-button color="primary" routerLink="/log-in">Iniciar sesión</button>
-    <button mat-button color="primary" routerLink="/log-in">Cerrar sesión</button>
+    @if(!(userRole$ | async)){
+        <button mat-button color="primary" routerLink="/sign-up">Registrarse</button>
+        <button mat-button color="primary" routerLink="/log-in">Iniciar sesión</button>
+    }
+    @if(!!(userRole$ | async)){
+        <button mat-button color="primary" routerLink="/log-in">Cerrar sesión</button>
+    }
 </mat-toolbar>

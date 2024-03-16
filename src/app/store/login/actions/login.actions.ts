@@ -2,9 +2,10 @@ import { createAction, props } from "@ngrx/store";
 import { User } from "../../../../models/user";
 
 enum LoginActionTypes {
-    Login = '[User] Log in',
-    LoginSuccess = '[User] Log in success',
-    LoginFailure = '[User] Log in failure',
+    Login = '[Auth] Log in',
+    LoginSuccess = '[Auth] Log in success',
+    LoginFailure = '[Auth] Log in failure',
+    Logout = '[Auth] Log out'
 }
 
 export const loginAction = createAction(
@@ -20,4 +21,8 @@ export const loginActionSuccess = createAction(
 export const loginActionFailure = createAction(
     LoginActionTypes.LoginFailure,
     props<{error: string}>(),
+);
+
+export const logOut = createAction(
+    LoginActionTypes.Logout
 );

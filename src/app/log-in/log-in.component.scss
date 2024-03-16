@@ -2,11 +2,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Esto asegura que el contenedor ocupe toda la altura de la ventana del navegador */
+    height: 80vh;
   
   
   &__container {
     display: inline-grid;
+    width: 24rem;
   }
 }
   

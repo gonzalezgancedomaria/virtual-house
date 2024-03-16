@@ -1,0 +1,31 @@
+.map-1 {
+  background-image: url('../../../../assets/images/map-1.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 350px;
+  height: 260px;
+  display: block;
+  margin: auto;
+  background-size: 350px 260px;
+}
+
+.map-2 {
+  background-image: url('../../../../assets/images/map-2.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 350px;
+  height: 260px;
+  display: block;
+  margin: auto;
+  background-size: 350px 260px;
+}
+
+.pin {
+  position: absolute;
+  cursor: pointer;
+}
+
+.map-size {
+  position: relative;
+
+}

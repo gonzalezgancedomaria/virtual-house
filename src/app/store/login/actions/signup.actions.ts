@@ -2,9 +2,9 @@ import { createAction, props } from "@ngrx/store";
 import { User } from "../../../../models/user";
 
 enum SignupActionTypes {
-    Signup = '[User] Sign up',
-    SignupSuccess = '[User] Sign up success',
-    SignupFailure = '[User] Sign up failure',
+    Signup = '[Auth] Sign up',
+    SignupSuccess = '[Auth] Sign up success',
+    SignupFailure = '[Auth] Sign up failure',
 }
 
 export const SignupAction = createAction(
