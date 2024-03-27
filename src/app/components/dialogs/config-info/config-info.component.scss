@@ -1,0 +1,14 @@
+.container {
+    &__content {
+        margin: 1.4rem;
+    }
+
+    &__actions {
+        display: reverse;
+        margin-right: 1rem;
+        
+        button {
+            margin-left: 1rem;
+        }
+    }
+}

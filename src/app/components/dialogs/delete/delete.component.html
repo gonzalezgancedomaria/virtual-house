@@ -1,0 +1,10 @@
+<div class="container">
+    <h2 mat-dialog-title>¿Estás seguro de que quieres eliminar?</h2>
+    <div mat-dialog-content class="container__content">
+    <span>Esta acción es irreversible</span>
+    </div>
+    <div mat-dialog-actions align="end" class="container__actions">
+        <button mat-stroked-button (click)="close()">No, gracias.</button>
+        <button mat-flat-button color="warn" [mat-dialog-close]="true">Eliminar</button>
+    </div>
+</div>

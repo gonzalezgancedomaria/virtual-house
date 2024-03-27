@@ -1,0 +1,42 @@
+.container {
+    &__content {
+        margin: 1.4rem;
+        display: grid;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__map-size {
+        position: relative;
+        width: 350px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__actions {
+        display: reverse;
+        margin-right: 2rem;
+        
+        button {
+            margin-left: 1rem;
+        }
+    }
+}
+
+#map {
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 350px;
+    height: 260px;
+    display: block;
+    margin: auto;
+    background-size: 350px 350px;
+  }
+  
+  .pin {
+    position: absolute;
+    cursor: pointer;
+  }
+  
+  

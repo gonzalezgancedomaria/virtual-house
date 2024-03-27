@@ -250,12 +250,12 @@ export class PannellumService {
       this.pannellumViewer.on('mousedown', (e) => {
         if (this.mouseToogle) {
           let a = this.pannellumViewer.mouseEventToCoords(e);
-          // console.log(a);
           this.toogleAddHotspot(false);
           this.addHotspot(a);
         }
       });
     }
+    console.log('sceneJson', this.sceneJson);
   }
 
   /**

@@ -1,0 +1,38 @@
+<div class="container">
+    <h2 mat-dialog-title>Añadir sensor en el mapa</h2>
+    <div mat-dialog-content class="container__content">
+        <div>
+            <img src="assets/svgs/left_click.svg" alt="left_click">
+            <span> Haz click en la escena para añadir un nuevo sensor</span>
+        </div>
+        <div class="container__map-size">
+            <div id="map" (click)="onMouseClick($event)">
+                @for(pin of tour.pins; track pin; let i = $index){
+                    <div class="pin" id="{{'pin-'+ i}}"
+                        [style.left]="pin.x + '%'"
+                        [style.top]="pin.y + '%'"
+                        (click)="onClick.emit(i)"
+                    >
+                    <mat-icon
+                        [color]="i === selectedPin ? 'warn' : 'primary'"
+                        [style.fontSize]="i === selectedPin ? '28px' : '24px'"
+                        >location_on</mat-icon>
+                    <label style="color: white;">{{i+1}}</label>
+                </div>
+                }
+            </div>
+        </div>
+        <mat-form-field>
+            <mat-label>Elige una escena</mat-label>
+            <mat-select name="select-scene" [(ngModel)]="selected" (ngModelChange)="onSelectChange()">
+                @for(item of scenesAvailable; track item){
+                    <mat-option [value]="item">{{item}}</mat-option> 
+                }
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-actions align="end" class="container__actions">
+        <button mat-flat-button color="primary" [disabled]="!selected || tour.pins.length === 0" (click)="save()">Guardar</button>
+        <button mat-flat-button color="accent" [mat-dialog-close]="true">Close</button>
+    </div>
+</div>

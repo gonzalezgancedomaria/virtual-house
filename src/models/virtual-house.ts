@@ -1,4 +1,4 @@
-export interface Virtual_House {
+export interface VirtualHouse {
     id: number;
     name: string;
     features: string;

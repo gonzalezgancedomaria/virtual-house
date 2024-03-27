@@ -1,0 +1,18 @@
+<div class="map-size">
+  <div class="map-1">
+    @for(pin of pins; let i = $index; track "pin-" + i){
+    <div
+      class="pin"
+      [style.left]="pin.x + '%'"
+      [style.top]="pin.y + '%'"
+      (click)="onClick.emit(i)"
+    >
+      <mat-icon
+        [color]="i === selectedPin ? 'primary' : 'accent'"
+        [style.fontSize]="i === selectedPin ? '28px' : '24px'"
+        >location_on</mat-icon
+      >
+    </div>
+    }
+  </div>
+</div>

@@ -1,17 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { VirtualHouseComponent } from './virtual-house/virtual-house.component';
-import { ToolbarComponent } from './toolbar/toolbar.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
-import { LogInComponent } from './log-in/log-in.component';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { LogInComponent } from './components/log-in/log-in.component';
+import { VirtualHouseComponent } from './components/virtual-house/virtual-house.component';
+import { AddNewHouseComponent } from './components/add-new-house/add-new-house.component';
+import { HttpClientModule } from '@angular/common/http';
+import { Store } from '@ngrx/store';
+import * as loginActions from './store/actions/users/login.actions';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ToolbarComponent, VirtualHouseComponent, SignUpComponent, LogInComponent],
+  imports: [
+    RouterOutlet, 
+    HttpClientModule, 
+    ToolbarComponent, 
+    VirtualHouseComponent, 
+    SignUpComponent, 
+    LogInComponent, 
+    AddNewHouseComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
-  title = 'tfm';
+export class AppComponent{
+  title = 'Virtual Houses';
+
+  constructor() {
+  }
+
 }

@@ -12,6 +12,7 @@
 //Colors
 $primary-color: #00A5B5;
 $accent-color: #f71e6c;
+$warn: orange;
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
@@ -108,6 +109,25 @@ $tfm-theme: mat.define-light-theme((
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-image: url('./assets/background.png'); background-size: cover; background-repeat: no-repeat;}
-h1, h2, h3 {
+h1, h2 {
+  color: $primary-color;
+  margin: 1.2rem;
+}
+
+h3 {
+  color: $accent-color;
+}
+
+/* Global styles */
+mat-hint {
+  color: $warn;
+  padding: 0.2rem;
+}
+
+mat-error {
+  padding: 0.2rem;
+}
+
+mat-chip{
   color: $primary-color;
 }

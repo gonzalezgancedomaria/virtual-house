@@ -1,0 +1,20 @@
+<h2>Inicio de sesion</h2>
+<div class="center">
+  <form class="center__container" [formGroup]="form" (ngSubmit)="login()">
+    <mat-form-field>
+      <input matInput placeholder="Correo electrónico" type="email" formControlName="email" name="email">
+      @if(form.get('email').invalid && (form.get('email').dirty || form.get('email').touched)){
+        <mat-error>El email es requerido</mat-error>
+      }
+    </mat-form-field>
+  
+    <mat-form-field>
+      <input matInput placeholder="Contraseña" type="password" formControlName="password" name="password">
+      @if(form.get('password').invalid && (form.get('password').dirty || form.get('password').touched)){
+        <mat-error>Contraseña es requerida</mat-error>
+      }
+    </mat-form-field>
+  
+    <button mat-raised-button color="primary" [disabled]="form.invalid">Iniciar sesión</button>
+  </form>
+</div>

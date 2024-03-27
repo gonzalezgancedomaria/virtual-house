@@ -1,0 +1,68 @@
+/* styles.css */
+.header  {
+  display: flex;
+  margin: 0 3rem;
+  align-items: center;
+  justify-content: space-between;
+
+  &__search {
+    display: flex;
+    align-items: center;
+
+    input {
+      border: none; 
+      outline: none; 
+      padding: 10px;
+      border-radius: 100px;
+      overflow: hidden;
+      border: 1px solid grey; 
+      width: 20rem;
+    }
+  }
+
+  &__add {
+    margin-left: auto;
+  }
+}
+
+.container {
+    display: grid;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    &__card {
+      margin: 20px;
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+
+      &--actions {
+        display: inline-grid;
+        justify-content: center;
+
+        mat-chip {
+          color: purple;
+        }
+      }
+
+      &--location {
+        display: flex;
+        align-items: center;
+      }
+    }
+    
+  }
+  
+  .dato {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+  
+  .spacer {
+    flex: 1 1 auto;
+  }
+  
