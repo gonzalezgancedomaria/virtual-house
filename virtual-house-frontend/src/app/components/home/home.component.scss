@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    padding: 10rem 5rem;
+
+    &__left {
+    flex: 1;
+    padding: 4rem;
+  }
+  
+  &__right {
+    flex: 1;
+    padding: 2rem;
+    overflow: hidden;
+  }
+}
+  
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0 20px 0 20px;
+}
+
+  

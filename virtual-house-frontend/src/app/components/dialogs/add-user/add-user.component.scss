@@ -1,0 +1,19 @@
+
+.container {
+  &__center {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin: 1.4rem;
+  }
+
+  &__actions {
+    display: reverse;
+    margin-right: 1rem;
+    
+    button {
+        margin-left: 1rem;
+    }
+}
+}
+  
